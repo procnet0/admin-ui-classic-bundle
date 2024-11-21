@@ -322,11 +322,9 @@ pimcore.object.tags.block = Class.create(pimcore.object.tags.abstract, {
             for (let j = 0; j < this.currentElements.length; j++) {
                 if (item !== this.currentElements[j].container) continue;
 
-                let fields = this.currentElements[j].fields;
-                for (let fieldName in fields) {
-                    if (this.currentElements[j].fields.hasOwnProperty(fieldName)) {
-                        fields[fieldName].context.index = itemIndex;
-                    }
+                const fields = this.currentElements[j].fields;
+                for (const fieldName in fields) {
+                    fields[fieldName].context.index = itemIndex;
                 }
             }
         }
